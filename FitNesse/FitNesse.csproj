@@ -30,11 +30,13 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="fit">
-      <HintPath>D:\Tutorial\dotnet2\fit.dll</HintPath>
+    <Reference Include="fit, Version=2.3.5248.26006, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Fitnesse\fit.dll</HintPath>
     </Reference>
-    <Reference Include="fitSharp">
-      <HintPath>D:\Tutorial\dotnet2\fitSharp.dll</HintPath>
+    <Reference Include="fitSharp, Version=2.3.5248.26005, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Fitnesse\fitSharp.dll</HintPath>
     </Reference>
     <Reference Include="Newtonsoft.Json">
       <HintPath>..\packages\Newtonsoft.Json.4.5.6\lib\net40\Newtonsoft.Json.dll</HintPath>
