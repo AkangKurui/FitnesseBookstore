@@ -160,7 +160,7 @@ namespace FitNesse
         private static HttpClient SetUri()
         {
             HttpClient client = new HttpClient();
-            client.BaseAddress = new Uri("http://localhost/api-bookstore/");
+            client.BaseAddress = new Uri("http://202.57.11.147:8002/");
             return client;
         }
 
