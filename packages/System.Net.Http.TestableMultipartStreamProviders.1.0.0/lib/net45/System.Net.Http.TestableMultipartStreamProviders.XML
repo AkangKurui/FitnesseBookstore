@@ -1,0 +1,122 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>System.Net.Http.TestableMultipartStreamProviders</name>
+    </assembly>
+    <members>
+        <member name="T:System.Net.Http.TestableMultipartFileStreamProvider">
+            <summary>
+            A stream provider suited for use with multipart/form-data messages.
+            The stream provider looks at the <b>Content-Disposition</b> header
+            field and creates an output stream based on the presence of a
+            <b>filename</b> parameter.
+            </summary>
+        </member>
+        <member name="F:System.Net.Http.TestableMultipartFileStreamProvider.DefaultBufferSize">
+            <summary>
+            The default buffer size for file writes.
+            </summary>
+        </member>
+        <member name="M:System.Net.Http.TestableMultipartFileStreamProvider.#ctor(System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:System.Net.Http.TestableMultipartFileStreamProvider"/> class.
+            </summary>
+            <param name="rootPath">The root path to which body parts with filename parameters are written.</param>
+        </member>
+        <member name="M:System.Net.Http.TestableMultipartFileStreamProvider.#ctor(System.String,System.Int32)">
+            <summary>
+            Initializes a new instance of the <see cref="T:System.Net.Http.TestableMultipartFileStreamProvider"/> class.
+            </summary>
+            <param name="rootPath">The root path to which body parts with filename parameters are written.</param>
+            <param name="bufferSize">The size of the buffer to be used in with file streams.</param>
+        </member>
+        <member name="M:System.Net.Http.TestableMultipartFileStreamProvider.#ctor(System.String,System.Int32,SystemInterface.IO.IFile)">
+            <summary>
+            Initializes a new instance of the <see cref="T:System.Net.Http.TestableMultipartFileStreamProvider"/> class.
+            </summary>
+            <param name="rootPath">The root path to which body parts with filename parameters are written.</param>
+            <param name="bufferSize">The size of the buffer to be used in with file streams.</param>
+            <param name="fileWrapper">A wrapper around <see cref="T:System.IO.File"/> allowing this class to be tested without accessing a filesystem.</param>
+        </member>
+        <member name="M:System.Net.Http.TestableMultipartFileStreamProvider.GetLocalFileName(System.Net.Http.Headers.HttpContentHeaders)">
+            <summary>
+            Gets the name of the local file which will be combined with the root path
+            to create an absolute file name where the contents of the current MIME
+            body part will be stored.
+            </summary>
+            <param name="headers">The headers for the current MIME body part.</param>
+            <returns>A relative filename with no path component.</returns>
+        </member>
+        <member name="M:System.Net.Http.TestableMultipartFileStreamProvider.GetStream(System.Net.Http.HttpContent,System.Net.Http.Headers.HttpContentHeaders)">
+            <summary>
+            Gets the stream instance to which the message body part is written.
+            </summary>
+            <param name="parent">The HTTP content that contains this body part.</param>
+            <param name="headers">Header fields describing the body part.</param>
+            <returns>The <see cref="T:System.IO.Stream"/> instance where the message body part is written.</returns>
+        </member>
+        <member name="P:System.Net.Http.TestableMultipartFileStreamProvider.RootPath">
+            <summary>
+            Gets the root path to which body parts with filename parameters are written.
+            </summary>
+        </member>
+        <member name="P:System.Net.Http.TestableMultipartFileStreamProvider.BufferSize">
+            <summary>
+            Gets the number of bytes buffered for writes to the file.
+            </summary>
+        </member>
+        <member name="P:System.Net.Http.TestableMultipartFileStreamProvider.FileData">
+            <summary>
+            Gets the multipart file data.
+            </summary>
+        </member>
+        <member name="T:System.Net.Http.TestableMultipartFormDataStreamProvider">
+            <summary>
+            A stream provider suited for use with multipart/form-data messages.
+            The stream provider looks at the <b>Content-Disposition</b> header
+            field and creates an output stream based on the presence of a
+            <b>filename</b> parameter.
+            </summary>
+        </member>
+        <member name="M:System.Net.Http.TestableMultipartFormDataStreamProvider.#ctor(System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:System.Net.Http.TestableMultipartFormDataStreamProvider"/> class.
+            </summary>
+            <param name="rootPath">The root path to which subparts with filename parameters are written.</param>
+        </member>
+        <member name="M:System.Net.Http.TestableMultipartFormDataStreamProvider.#ctor(System.String,System.Int32)">
+            <summary>
+            Initializes a new instance of the <see cref="T:System.Net.Http.TestableMultipartFormDataStreamProvider"/> class.
+            </summary>
+            <param name="rootPath">The root path to which subparts with filename parameters are written.</param>
+            <param name="bufferSize">The size of the buffer to be used in with file streams.</param>
+        </member>
+        <member name="M:System.Net.Http.TestableMultipartFormDataStreamProvider.#ctor(System.String,System.Int32,SystemInterface.IO.IFile)">
+            <summary>
+            Initializes a new instance of the <see cref="T:System.Net.Http.TestableMultipartFormDataStreamProvider"/> class.
+            </summary>
+            <param name="rootPath">The root path to which subparts with filename parameters are written.</param>
+            <param name="bufferSize">The size of the buffer to be used in with file streams.</param>
+            <param name="fileWrapper">A wrapper around <see cref="T:System.IO.File"/> allowing this class to be tested without accessing a filesystem.</param>
+        </member>
+        <member name="M:System.Net.Http.TestableMultipartFormDataStreamProvider.ExecutePostProcessingAsync">
+            <summary>
+            Reads the non-file contents as form data.
+            </summary>
+            <returns>A task that represents the asynchronous operation.</returns>
+        </member>
+        <member name="M:System.Net.Http.TestableMultipartFormDataStreamProvider.GetStream(System.Net.Http.HttpContent,System.Net.Http.Headers.HttpContentHeaders)">
+            <summary>
+            Gets the stream instance to which the message body part is written.
+            </summary>
+            <param name="parent">The HTTP content that contains this body part.</param>
+            <param name="headers">Header fields describing the body part.</param>
+            <returns>The <see cref="T:System.IO.Stream"/> instance where the message body part is written.</returns>
+        </member>
+        <member name="P:System.Net.Http.TestableMultipartFormDataStreamProvider.FormData">
+            <summary>
+            Gets a <see cref="T:System.Collections.Specialized.NameValueCollection"/> of form data passed as part of the multipart form data.
+            </summary>
+        </member>
+    </members>
+</doc>
