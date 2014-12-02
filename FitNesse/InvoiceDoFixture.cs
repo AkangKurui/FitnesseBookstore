@@ -149,7 +149,7 @@ namespace FitNesse
             itemUpdate.Total = itemResponse.Total;
         }
         #endregion
-        
+
         #region Private
         private static void SetRequestHeader(HttpClient client)
         {
@@ -160,7 +160,7 @@ namespace FitNesse
         private static HttpClient SetUri()
         {
             HttpClient client = new HttpClient();
-            client.BaseAddress = new Uri("http://202.57.11.147:8002/");
+            client.BaseAddress = new Uri("http://bookstore.dokuku.net/");
             return client;
         }
 
