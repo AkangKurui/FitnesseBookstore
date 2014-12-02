@@ -73,7 +73,7 @@ namespace FitNesse
         }
 
         public string TanggalTransaksi()
-        { 
+        {
             return invoice.TransactionDate.ToString("dd-MM-yyyy");
         }
 
@@ -133,7 +133,7 @@ namespace FitNesse
         private static HttpClient SetUri()
         {
             HttpClient client = new HttpClient();
-            client.BaseAddress = new Uri("http://localhost/api-bookstore/");
+            client.BaseAddress = new Uri("http://bookstore.dokuku.net/");
             return client;
         }
         #endregion
