@@ -1,4 +1,4 @@
 FitnesseBookstore
 =================
 
-readme file
+Output file : Fitnesse.dll
